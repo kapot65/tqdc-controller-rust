@@ -9,6 +9,9 @@ edition = "2021"
 dataforge = {path = "../dataforge"}
 numass = {path = "../numass"}
 
+mongodb = "2.3.1"
+serde_json = "1.0.91"
+
 tokio = { version = "1.21.2", features = ["full"] }
 protobuf = "3.2.0"
 
