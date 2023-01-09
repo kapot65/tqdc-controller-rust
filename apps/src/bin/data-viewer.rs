@@ -11,8 +11,8 @@ use clap::Parser;
 
 use numass::Reply;
 use numass::protos::rsb_event;
-use apps::{point_to_histogramm, PointHistogramm, ProcessingParams};
-use processing::Algorithm;
+use apps::{point_to_histogramm, ProcessingParams};
+use processing::{Algorithm, histogram::PointHistogram};
 
 
 #[derive(Parser, Debug)]
@@ -26,7 +26,7 @@ struct Opt {
 struct FileCache {
     opened: bool,
     processed: Option<SystemTime>,
-    histogram: Option<PointHistogramm>
+    histogram: Option<PointHistogram>
 }
 
 struct DataViewerApp {
@@ -423,7 +423,7 @@ async fn main() {
     let configuration = Arc::clone(&state);
 
     let processing_params = Arc::new(Mutex::new(ProcessingParams {
-        algorithm: Algorithm::Likhovid { left: 3, right: 19 },
+        algorithm: Algorithm::Likhovid { left: 6, right: 36 },
         convert_to_kev: true,
         merge_close_events: true,
         hist_min: 0.0,
