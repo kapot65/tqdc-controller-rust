@@ -6,8 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dataforge = {path = "../dataforge"}
-numass = {path = "../numass"}
+dataforge = { git = "ssh://git@bitbucket.org/Kapot/dataforge-parser-rust.git", tag = "0.1.0" }
+numass = { git = "ssh://git@bitbucket.org/Kapot/dataforge-parser-numass.git", tag = "0.1.0" }
 
 mongodb = "2.3.1"
 serde_json = "1.0.91"
